@@ -72,5 +72,7 @@ module.exports = {
   ...
   plugins: [require('nativewind/tailwind/css')],
 }
-
 ```
+
+### 예제 코드
+link
