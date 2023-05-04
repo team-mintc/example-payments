@@ -77,4 +77,4 @@ module.exports = withTM({
 ```
 
 ### 예제 코드
-[pages/nativewind.tsx](https://github.com/team-mintc/example-next-nativewind/blob/main/pages/nativewind.tsx)
+[https://github.com/team-mintc/example-next-nativewind/blob/main/pages/nativewind.tsx](https://github.com/team-mintc/example-next-nativewind/blob/main/pages/nativewind.tsx)
