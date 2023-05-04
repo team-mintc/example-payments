@@ -41,6 +41,8 @@ yarn add react-native react-native-web nativewind
 yarn add -D @types/react-native next-transpile-modules
 ```
 
+### Configuration
+
 tailwind.config.js
 ```
 /** @type {import('tailwindcss').Config} */
@@ -49,8 +51,6 @@ module.exports = {
   plugins: [require('nativewind/tailwind/css')],
 }
 ```
-
-### Configuration
 
 next.config.js
 ```
