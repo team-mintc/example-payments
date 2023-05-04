@@ -6,7 +6,8 @@
 npx create-next-app example-next-nativewind
 ```
 
-`progress image`
+![image](https://user-images.githubusercontent.com/5517346/236241690-bd908723-b4f3-47f4-bcd7-7e44b2489528.png)
+
 
 ### 타입스크립트를 사용
 
@@ -75,4 +76,4 @@ module.exports = {
 ```
 
 ### 예제 코드
-link
+[pages/nativewind.tsx](https://github.com/team-mintc/example-next-nativewind/blob/main/pages/nativewind.tsx)
