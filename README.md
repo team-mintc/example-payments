@@ -1,38 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js + nativewind
 
-## Getting Started
+## Next 프로젝트 생성
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+```
+npx create-next-app example-next-nativewind
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`progress image`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### 타입스크립트를 사용
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+프로젝트가 커지거나 라이브러리를 작성할 때 javascript는 타입을 알 수 없기 때문에 별도의 문서를 참고하여 진행 할 수 밖에 없다.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+이러한 문제를 해결하기 위해 타입스크립트를 사용하여 타입을 지정하여 프로젝트가 커져 본인의 코드가 기억이 나지 않거나 협업 시 발생할 수 있는 이슈를 해결하는데 큰 도움이 되므로 반드시 타입스크립트를 사용하도록 권장한다.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Tailwind CSS 설치
+프로젝트 생성 시 옵션으로 선택하여 설치하도록 한다.
+Default가 설치하는 것이다.
+postcss, autoprefixer가 함께 설치된다.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## NativeWind 설치
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+NativeWind는 React Native에서 Tailwind CSS를 사용하도록 하는 라이브러리다.
+React Native를 이용해 모바일앱을 동시에 만들때 next에서 만든 Component를 재사용할 수 있는 장점이 있기때문에 NativeWind를 사용하여 스타일링을 한다.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### React Native, React Native for Web
+React Native는 모바일 Native 컴포넌트를 사용하기 때문에 React와 같은 코드를 공유하기가 어렵다.
+이를 위해 react-native-web은 내부적으로 웹과 native를 다른 컴포넌트를 사용하지만 개발자는 같은 코드로 작성할 수 있도록 해준다.
 
-## Deploy on Vercel
+### 설치
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### 패키지 설치
+```
+yarn add react-native react-native-web nativewind
+yarn add -D @types/react-native next-transpile-modules
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Configuration
+
+next.config.js
+```
+/** @type {import('next').NextConfig} */
+
+const withTM = require('next-transpile-modules')([
+  'react-native-web',
+  'nativewind',
+]);
+
+module.exports = withTM({
+  webpack: config => {
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      'react-native$': 'react-native-web',
+    };
+    config.resolve.extensions = [
+      '.web.js',
+      '.web.ts',
+      '.web.tsx',
+      ...config.resolve.extensions,
+    ];
+    return config;
+  },
+});
+```
+
+tailwind.config.js
+```
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  ...
+  plugins: [require('nativewind/tailwind/css')],
+}
+
+```
