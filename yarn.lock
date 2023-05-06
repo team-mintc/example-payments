@@ -991,6 +991,11 @@
     picocolors "^1.0.0"
     tslib "^2.5.0"
 
+"@portone/browser-sdk@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@portone/browser-sdk/-/browser-sdk-0.0.1.tgz#252bd05ac47176dd09ad4e5ad0d4363bc0619c0a"
+  integrity sha512-33K4PB5gdzMCv1sgfgxls2reg3O/znWxELb22zlh4Df/vhhmn64UWyvXB7Zx+mLsihQZCwS9+LVo7AW6UkactA==
+
 "@react-native-community/cli-clean@^10.1.1":
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-clean/-/cli-clean-10.1.1.tgz#4c73ce93a63a24d70c0089d4025daac8184ff504"

@@ -16,5 +16,77 @@ console image
 
 본 예제에서는 PortOne v2와 토스페이먼츠를 사용하여 결제를 구현하는 것으로 한다.
 
+## 사전 준비
+본 예제에서는 PG사 계약은 하지 않고 테스트 연동으로 진행하기로 한다.
+
+### PortOne 회원가입
+```
+https://admin.portone.io/auth/signin
+```
+이미지
+
+### 결제 채널 생성 (테스트 결제 채널)
+콘솔 좌측 메뉴 중 결제 연동을 선택
+
+이미지
+
+결제 대행사 설정 및 추가에서 다음과 같이 선택 후 추가
+
+```
+테스트 - 토스페이먼츠 - 토스페이먼츠
+```
+
+이미지
+
+결과 이미지
+
+## 설치
+
+```
+yarn add @portone/browser-sdk
+```
+
+## 결제 연동
+
+```javascript
+...
+<StyledText
+  // ...
+  onPress={() => {
+    PortOne.requestPayment({
+      // 가맹점 storeId로 변경해주세요.
+      storeId: 'store-9bf6076d-beef-4729-9521-ae66c14e0569',
+      isTestChannel: true,
+      redirectUrl: 'http://localhost:3000/payment/redirect',
+      orderName: '나이키 와플 트레이너 2 SD',
+      totalAmount: 1000,
+      pgProvider: 'PG_PROVIDER_TOSSPAYMENTS',
+      payMethod: 'CARD',
+      paymentId: 'paymentId_now',
+      taxFreeAmount: 300,
+      customer: {
+        customerId: 'customerId_now',
+        fullName: '신현성',
+        phoneNumber: '1670-5176',
+        email: 'test@portone.io',
+        zipcode: '04783',
+      },
+      windowType: {
+        pc: 'IFRAME',
+        mobile: 'REDIRECTION',
+      },
+      noticeUrls: ['http://localhost:3000/api/payment/hook'],
+      confirmUrl: 'http://localhost:3000/payment/confirm',
+      appScheme: 'portone://',
+      isCulturalExpense: false,
+      currency: 'CURRENCY_KRW',
+      locale: 'KO_KR',
+    });
+  }}>
+  카드 결제
+</StyledText>
+```
+
+
 ### 예제 코드
 [https://github.com/team-mintc/example-payments](https://github.com/team-mintc/example-payments)
