@@ -25,7 +25,7 @@
 
 ## PortOne
 
-image.png
+![image](https://github.com/team-mintc/example-payments/assets/5517346/ca5cef3f-a2be-4194-9c88-40c55423915b)
 
 결제 모듈을 쉽게 붙일 수 있도록 SDK를 제공한다.
 
@@ -33,7 +33,7 @@ image.png
 
 테스트베드도 제공하며, 콘솔이 잘 구성되어 있어 유용하게 이용할 수 있다.
 
-console image
+![image](https://github.com/team-mintc/example-payments/assets/5517346/7909dd60-428a-40df-a189-632ab218345c)
 
 본 예제에서는 PortOne v2와 토스페이먼츠를 사용하여 결제를 구현하는 것으로 한다.
 
@@ -47,13 +47,14 @@ console image
 https://admin.portone.io/auth/signin
 ```
 
-이미지
+![image](https://github.com/team-mintc/example-payments/assets/5517346/3e05a205-0829-44de-a587-cb72fba7c551)
 
 ### 결제 채널 생성 (테스트 결제 채널)
 
 콘솔 좌측 메뉴 중 결제 연동을 선택
 
-이미지
+![image](https://github.com/team-mintc/example-payments/assets/5517346/b73d8458-4055-473e-b03b-e3d051f3584a)
+
 
 결제 대행사 설정 및 추가에서 다음과 같이 선택 후 추가
 
@@ -61,9 +62,9 @@ https://admin.portone.io/auth/signin
 테스트 - 토스페이먼츠 - 토스페이먼츠
 ```
 
-이미지
+![image](https://github.com/team-mintc/example-payments/assets/5517346/4e2994fa-81c1-45c1-979a-6cea167ee90b)
 
-결과 이미지
+![image](https://github.com/team-mintc/example-payments/assets/5517346/b859a6eb-0ecb-47ed-88a8-ff1ad60d4387)
 
 ## 설치
 
