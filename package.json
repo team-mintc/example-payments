@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@portone/browser-sdk": "^0.0.1",
+    "@team-mintc/portone-v2": "^0.7.6",
     "@types/node": "18.16.3",
     "@types/react": "18.2.4",
     "@types/react-dom": "18.2.3",
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "eslint": "8.39.0",
     "eslint-config-next": "13.3.4",
+    "lodash": "^4.17.21",
     "nativewind": "^2.0.11",
     "next": "13.3.4",
     "postcss": "8.4.23",
@@ -27,6 +29,8 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/lodash": "^4.14.194",
     "@types/react-native": "^0.71.6",
     "next-transpile-modules": "^10.0.0",
     "prettier": "^2.8.8"

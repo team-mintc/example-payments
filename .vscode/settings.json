@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+
+  "prettier.printWidth": 150,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "terminal.integrated.tabs.enabled": true,
+
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true
+}
